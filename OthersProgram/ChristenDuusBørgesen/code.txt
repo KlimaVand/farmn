@@ -1,0 +1,137 @@
+procedure nniveaumean;
+begin
+obs:=1;
+while obs<obsold do begin
+jordt:=jordtype;
+ 
+testareal2:=testareal2+areal;
+ 
+{nfikssimb:=ninp2[3];}
+ JORDTYPE:=JORD[OBS];
+AFGRODE:=AFGRODEID[OBS];
+areal:=AREALMM[OBS];
+ 
+ nfiksemp:=nfiksempir[obs];
+ if ((afgrode=2) or (afgrode=3) or (afgrode=8) or (afgrodemm[glrafgobs[obs]]=3)) then nfiksempirisk;
+NHUSD:=NHUSDID[OBS];
+NHDL:=NHDLID[OBS];
+bt:=bedtype[obs];
+ 
+  vand:=vandid[obs];
+  nsim2:=nniveausim2[obs];
+bt2:=1;
+  if afgrode=3 then bt2:=2;
+   if afgrode=10 then bt2:=3;
+ 
+
+  arealbedtype[bt2]:= arealbedtype[bt2]+areal;
+  ntot2[bt2]:=ntot2[bt2]+((nhusd+nhdl+nfiksemp)*areal);
+atot2[bt2]:=areal+atot2[bt2];
+ 
+
+obs:=obs+1;
+end;
+if obs=obsold then begin
+nn:=1;
+ 
+while nn<4 do begin
+if atot2[nn]>0 then nmeantotbed[nn]:=ntot2[nn]/atot2[nn];
+if nmeantotbed[nn]>800 then begin
+  nmeantotbed[nn]:=nmeantotbed[nn];
+end;
+ 
+ 
+ 
+ntot2[nn]:=0;
+atot2[nn]:=0;
+ 
+nn:=nn+1;
+nmeantotbed[nn]:=10;
+end;
+ 
+
+end;
+obs:=1;
+end;
+ 
+
+procedure nles3;
+begin
+ 
+
+nn:=yy;
+ 
+ 
+afstromnles:=percres[4,jbnr];
+  if afgrode=3 then bt2:=2;
+   if afgrode=10 then bt2:=3;
+ 
+ 
+if afstromnles<=0 then afstromnles:=1;
+reln:=nmeantotbed[bedt];
+nhusdforarnles:=nhusd;
+              bt:=godtypeid;
+if (bt=1) then nh4forarnles:=(nhusdforarnles*0.55);
+if (bt=2) then  nh4forarnles:=nhusdforarnles*0.7;
+if ((bt=3)) then nh4efteraarnles:=nhusdefteraarnles*0.55;
+ 
+   if ((afgrode=2) {or (afgrode=8)}) then nfikssimb:= nfiksemp;
+if nforaar<0 then nforaar:=0;
+ nudbinding:=0;
+ 
+ 
+ 
+nudbinding:=0;
+ 
+nniveau:=nmeantotbed[bt2];  {atmosfaere deposition ‘ndring);}
+ afg2:=afgrodemm[glrafgobs[obs]];
+Høstet N 
+nfjernet:= nudbafg2[yy,afg2];
+nfikssimb:=nfiksemp;
+ 
+afgrodenles3:=psi[afgnles[afg2]];
+forfrugtnles3:=lambda[forfrugtnles[afg2]];
+nh4forar:=nh4forarnles+nhdl+nfikssimb;
+ 
+   if efterafgrodeid[obs]=1 then begin
+               if  afgnles[mm]>2 then
+    afgrodenles3:=psi[2];
+    afg2:=2;
+    { her angives forfrugt}
+if forfrugtnles[mm]>2 then  forfrugtnles3:=lambda[2];
+ 
+
+   end;
+ if aar-theta2=0 then begin
+ nn:=nn;
+ end;
+    n:=nn;
+ 
+tnles3:=((b1*nniveau)+(b2*nh4forarnles)+(b3*nudbinding)+(b4[jordtype]*nh4efteraarnles)-(nfjernet*tnles)+afgrodenles3+forfrugtnles3);
+teffekt:=0;
+ 
+if tnles3<0 then teffekt:=tnles3*0.5466;
+ 
+if teffekt<0 then begin
+teffekt:=teffekt;
+end;
+ 
+ 
+ 
+if tnles3<0.001 then tnles3:=0.001;
+aar:=2001;
+ 
+ tnles3exp:=(alpha+teffekt+(theta1/(aar-theta2)))+exp(knles*ln(tnles3));
+ 
+afstromnles0:=(1-exp(-d1*afstromnles));
+afstromnles1:=(exp(-d2*afstrom0[obs,jbnr]));
+lernles3:=exp(-d4*fkl[jbnr]);
+humusnles3:=exp(-d3*fkh[jbnr]);
+faktoreffekt:=afstromnles0*afstromnles1*lernles3*humusnles3*cnles;
+ 
+lnnudvasknles3:=(tnles3exp*faktoreffekt);
+ 
+
+
+nudvasknles3:=lnnudvasknles3;
+end;

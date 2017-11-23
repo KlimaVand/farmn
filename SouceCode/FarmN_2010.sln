@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmN_2010", "FarmN_2010.csproj", "{91A93D10-EEDA-4DFE-AA22-D4FE46FD2AA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmNTestNewOption", "..\FarmNTestServer1\FarmNTestNewOption.csproj", "{B8959026-3800-4C54-91DF-6094FC8D37BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91A93D10-EEDA-4DFE-AA22-D4FE46FD2AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A93D10-EEDA-4DFE-AA22-D4FE46FD2AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A93D10-EEDA-4DFE-AA22-D4FE46FD2AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A93D10-EEDA-4DFE-AA22-D4FE46FD2AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8959026-3800-4C54-91DF-6094FC8D37BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8959026-3800-4C54-91DF-6094FC8D37BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8959026-3800-4C54-91DF-6094FC8D37BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8959026-3800-4C54-91DF-6094FC8D37BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

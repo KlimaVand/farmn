@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="FarmN_2010.BoughtManure">
+    <Position X="15" Y="15.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAACAAAAAAAAgAgAgRAAAAAA=</HashCode>
+      <FileName>BoughtManure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.Farm">
+    <Position X="12.5" Y="15.25" Width="1.75" />
+    <AssociationLine Name="Scenario" Type="FarmN_2010.Scenario" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="17.25" />
+        <Point X="14.25" Y="17.402" />
+        <Point X="14.663" Y="17.402" />
+        <Point X="14.663" Y="18.938" />
+        <Point X="15.25" Y="18.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAKgIAAAAEAAAAAAAAAAAAAgAAAAAAAAAI=</HashCode>
+      <FileName>Farm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Scenario" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="DeliveryList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FarmN_2010.FieldPlan">
+    <Position X="9.5" Y="18.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAghCgAAAIAQCAAAAAAAAIABoBAAAgACACAAhWAAABA=</HashCode>
+      <FileName>FieldPlan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.FieldPlanRotation">
+    <Position X="18.25" Y="12.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>iwQJMQAgEKQKy0CARGgIYMEWQKQGQgQAAAADBCAEqFM=</HashCode>
+      <FileName>FieldPlanRotation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ManureFertilizerDeliveryList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FarmN_2010.ManureFertilizerDelivery">
+    <Position X="15.25" Y="21" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAIAAAEAAAAAAAAAAAAIAAAAAAAQAAAgAAAAAA=</HashCode>
+      <FileName>ManureFertilizerDelivery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.Rotation">
+    <Position X="12.5" Y="18" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEQIAEAAJAAACCIgAACIAAggIAAIACABAJCICIAAkA=</HashCode>
+      <FileName>Rotation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="FieldPlanList" />
+      <Field Name="FieldPlanRotationList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FarmN_2010.Scenario">
+    <Position X="15.25" Y="18.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAgCAAAAAAAAAAAAAAAAgAABAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Scenario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="RotationList" />
+      <Field Name="ManureList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FarmN_2010.Farm_Delivery">
+    <Position X="9.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Farm_Delivery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.CalculateScenario">
+    <Position X="12.75" Y="7" Width="4.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="CalculateManureFertilizer" Type="FarmN_2010.CalculateManureFertilizerDistribution" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.5" Y="7.438" />
+        <Point X="17.875" Y="7.438" />
+        <Point X="17.875" Y="4.063" />
+        <Point X="18.5" Y="4.063" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IQcIUykFAEAAmOJQQAMECoYAACgfMDdqCCGCmAAQIaE=</HashCode>
+      <FileName>CalculateScenario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="farm" />
+      <Field Name="Denitrification" />
+      <Field Name="NLes" />
+      <Field Name="SoilChange" />
+      <Field Name="CropRotation" />
+      <Field Name="CalculateManureFertilizer" />
+      <Field Name="returnData" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="rotationData" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FarmN_2010.SIMDEN">
+    <Position X="15.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAIAIAAAAAAAAAoAAAAAAAAAAAA=</HashCode>
+      <FileName>SIMDEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.N_LES">
+    <Position X="9.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAEAAAACQCBQBAAAAAAIAAAQAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>N-LES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.DeltaSoilN">
+    <Position X="18.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAAAAAgAAAAIAIAAAAAAAIAAAAAgAAAAAA=</HashCode>
+      <FileName>DeltaSoilN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.CalculateCropRotation">
+    <Position X="9.5" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CalculateCropRotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.CalculateManureFertilizerDistribution">
+    <Position X="18.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAIgCBwCEAgCABAAQAAAAAAACgQgAJAQIKAAAAEEAA=</HashCode>
+      <FileName>CalculateManureFertilizerDistribution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.message">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEAAAIIAAAAAAAAAAAAAAAAAAEQAAAAAAAABA=</HashCode>
+      <FileName>message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarmN_2010.FarmNWebService2010">
+    <Position X="13.5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAFACAAIAAAAAgAAAAAAAIJAIAAAAgQAAAg=</HashCode>
+      <FileName>FarmNWebService2010.asmx.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scenario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FarmN_2010.FarmNData">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACEAAkAhAAAEIAACAASAECAAQIAIAAAAAIAAAACBCA=</HashCode>
+      <FileName>FarmNWebService2010.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="FarmN_2010.StandardRotation">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAYAAAAIEAAAAAAAAAAAAAACABIAAAAAAAEEAAIgA=</HashCode>
+      <FileName>FarmNWebService2010.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FarmN_2010.Manure">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAABQAAAAAIAAAAAAAQAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>FarmNWebService2010.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FarmN_2010.returnItems">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAEAAAAEAgAAAACABQBAAAAgAEAAICAAAgQAAE=</HashCode>
+      <FileName>FarmNWebService2010.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

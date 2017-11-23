@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx?wsdl" docRef="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx" xmlns:q1="http://130.226.173.223/FarmN_Webservice_ver2" binding="q1:FarmNWebServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx" xmlns:q2="http://130.226.173.223/FarmN_Webservice_ver2" binding="q2:FarmNWebServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

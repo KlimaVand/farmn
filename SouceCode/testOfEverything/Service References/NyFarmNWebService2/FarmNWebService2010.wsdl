@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CalculateExisting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arealer" type="tns:ArrayOfAreal" />
+            <s:element minOccurs="0" maxOccurs="1" name="goedningsmaengder" type="tns:ArrayOfGoedningsmaengde" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedriftID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="option2" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAreal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Areal" nillable="true" type="tns:Areal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Areal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Referencesaedskifte" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ha12Grader" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaMegetSaarbar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="PctOplandsreduktionMegetSaarbar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="PctOplandsreduktionMindreSaarbar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaMindreSaarbar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaNKlasse0" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaNklasse1" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaNKlasse2" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaNKlasse3" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaGrundvand" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPSaarbar" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaLavbundsjord" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaDraenetLerjord" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPt4til6" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPtOver6" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPtUnder4" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPKlasse0" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPKlasse1" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPKlasse2" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaPKlasse3" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="HaOkkerklasse1" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="PKlasse" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Anlaeg" type="tns:Anlaeg" />
+              <s:element minOccurs="1" maxOccurs="1" name="ArealType" type="tns:ArealTyper" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDraenet" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsVandet" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Jordbundstype" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Saedskifte" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsEjetForpagtet" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ha" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AftaleArealOmfattetPKlasse" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AftaleArealGodkendtFrafoerteMaengder" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DatabaseObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DbId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Goedningstype">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NUdnyttelsesProcent" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="NUdnyttelsesProcentSkalAngives" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Goedningsmaengde">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Vej" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Postnummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="By" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Goedningstype" type="tns:Goedningstype" />
+              <s:element minOccurs="1" maxOccurs="1" name="NUdnyttelse" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="KgN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="KgP" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DEKvaegFaarGeder" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DESvinOgAndre" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Anlaeg" type="tns:Anlaeg" />
+              <s:element minOccurs="1" maxOccurs="1" name="Goedningsstadie" type="tns:Goedningsstadie" />
+              <s:element minOccurs="1" maxOccurs="1" name="Nudrift" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FrafoertFraId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="GoedningstypeNUdnyttelsesProcent" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Anlaeg">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MeremissionFraAnlaeg" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmissionStaldeIkkeOmfattet" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmissionStaldeOmfattetUaendret" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmissionStaldeOmfattetAendret" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FaktiskAnsoegtEmission" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReduceretEmission" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BeregnetEmission" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Grundoplysning" type="tns:Grundoplysning" />
+              <s:element minOccurs="0" maxOccurs="1" name="Adresse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ansoegt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lokalisering" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Afstandskrav" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfstandskravOverholdt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="LandskabsHensyn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Energiforbrug" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Energiteknologi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vandforbrug" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vandteknologi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ejendomme" type="tns:ArrayOfEjendom" />
+              <s:element minOccurs="0" maxOccurs="1" name="Arealer" type="tns:ArrayOfAreal" />
+              <s:element minOccurs="1" maxOccurs="1" name="KravOm15PctUdnyttelseOpfyldt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="YderligereNoedvendigReduktion" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Naturlinjer" type="tns:ArrayOfNaturlinje" />
+              <s:element minOccurs="0" maxOccurs="1" name="DoedeDyr" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FastAffald" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OlieKemikalieAffald" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ByZone" type="tns:Lugtgeneberegning" />
+              <s:element minOccurs="0" maxOccurs="1" name="SamletBebyggelse" type="tns:Lugtgeneberegning" />
+              <s:element minOccurs="0" maxOccurs="1" name="EnkeltBolig" type="tns:Lugtgeneberegning" />
+              <s:element minOccurs="0" maxOccurs="1" name="Goedningsmaengder" type="tns:ArrayOfGoedningsmaengde" />
+              <s:element minOccurs="0" maxOccurs="1" name="Management" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EgenKontrol" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="KravOmPBalanceOverholdt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="YderligereReduktionForPBalanceOverholdt" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Grundoplysning">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Ansoeger" type="tns:Person" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ejer" type="tns:Person" />
+              <s:element minOccurs="0" maxOccurs="1" name="Kontakt" type="tns:Person" />
+              <s:element minOccurs="0" maxOccurs="1" name="KortBeskrivelse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IkkeTekniskResume" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DatoBeskrivelse" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ByggeStart" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ByggeSlut" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DriftStart" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Biaktivitet" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BedriftNavn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BedriftAdresse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BedriftPostnummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BedriftBy" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BedriftCvrNummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Anlaeg" type="tns:ArrayOfAnlaeg" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsIndsendt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ident" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DigiSigSubjectSerialNumber" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Skematype" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReferencesaedskifteAntalDE" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReferencesaedskifteAntalAndreDEStoerst" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReferencesaedskifteBekendtgoerelseOverholdt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReferencesaedskifteSamletArealEfterafgroeder" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReferencesaedskifteReduceretKvaelstofNorm" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Kommunenummer" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Person">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adresse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postnummer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="By" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefon1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefon2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnlaeg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Anlaeg" nillable="true" type="tns:Anlaeg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEjendom">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ejendom" nillable="true" type="tns:Ejendom" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ejendom">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Anlaeg" type="tns:Anlaeg" />
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ejendomsnummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Adresse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Postnummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="By" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CvrNummer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Spildevandsmaengde" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpildevandTilledning" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpildevandAfledning" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TransportBeskrivelse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RisiciMuligeUheld" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RisiciMinimeringRisiko" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RisiciMinimeringGene" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Stoejkilder" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StoejkilderDriftsperiode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StoejkilderTiltag" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SkadedyrGenerelt" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SkadedyrFluegener" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SkadedyrRottebekaempelse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BelysningBeskrivelse" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KemikalierPesticider" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KemikalierOevrige" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EnsilageOpbevaring" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AnlaegOphoer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChrNumre" type="tns:ArrayOfChrNummer" />
+              <s:element minOccurs="0" maxOccurs="1" name="Staldafsnit" type="tns:ArrayOfStaldafsnit" />
+              <s:element minOccurs="0" maxOccurs="1" name="Opbevaringslagre" type="tns:ArrayOfOpbevaringslager" />
+              <s:element minOccurs="1" maxOccurs="1" name="Kumulation" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Matrikler" type="tns:ArrayOfMatrikel" />
+              <s:element minOccurs="0" maxOccurs="1" name="Kommune" type="tns:Kommune" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfChrNummer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ChrNummer" nillable="true" type="tns:ChrNummer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ChrNummer">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Ejendom" type="tns:Ejendom" />
+              <s:element minOccurs="0" maxOccurs="1" name="Chr" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfStaldafsnit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Staldafsnit" nillable="true" type="tns:Staldafsnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Staldafsnit">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Ejendom" type="tns:Ejendom" />
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Udvidelse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="RengoeringDesinficeringA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OverbrusningA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VentilationA" type="tns:Ventilation" />
+              <s:element minOccurs="0" maxOccurs="1" name="KemiskLuftvaskerN" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="KemiskLuftvaskerA" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="BioLuftvaskerN" type="tns:BioLuftvasker" />
+              <s:element minOccurs="0" maxOccurs="1" name="BioLuftvaskerA" type="tns:BioLuftvasker" />
+              <s:element minOccurs="0" maxOccurs="1" name="BioFilterN" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="BioFilterA" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="LuftkoelingN" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="LuftkoelingA" type="tns:Teknologi" />
+              <s:element minOccurs="1" maxOccurs="1" name="SamlingStaldafkastN" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SamlingStaldafkastA" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="GylleforsuringN" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="GylleforsuringA" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="GyllekoelingN" type="tns:Teknologi" />
+              <s:element minOccurs="0" maxOccurs="1" name="GyllekoelingA" type="tns:Teknologi" />
+              <s:element minOccurs="1" maxOccurs="1" name="SkrabeanlaegN" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SkrabeanlaegA" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AjledraenN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AjledraenA" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Produktioner" type="tns:ArrayOfProduktion" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGeometry" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfstandTilNaturomraade" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuhedTerraen" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuhedNaturomraade" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="SamletBidrag" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="NyRenoveret" type="tns:NyRenovering" />
+              <s:element minOccurs="1" maxOccurs="1" name="BenzoeAntalGramPrFeN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BenzoeAntalGramPrFeA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfstandTilByZone" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfstandTilSamletBebyggelse" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfstandTilEnkeltBolig" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Mellem300Og60TilByZone" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Mellem300Og60TilSamletBebyggelse" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Mellem300Og60TilEnkeltBolig" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Ventilation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Teknologi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Naturlig" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AfkastHoejde" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="AfkastType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Stoevfiltre" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Teknologi">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Effekt" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Driftstid" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeBeskrivelse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BioLuftvasker">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Teknologi">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="EffektLugt" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfProduktion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Produktion" nillable="true" type="tns:Produktion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Produktion">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Staldafsnit" type="tns:Staldafsnit" />
+              <s:element minOccurs="1" maxOccurs="1" name="Dyrekategori" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Produktionstype" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalMaanederUdenforArealA" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalMaanederUdenforArealN" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalMaanederUdenforN" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalMaanederUdenforA" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalDyrN" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalDyrA" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalDeN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalDeA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalStipladserN" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AntalStipladserA" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="GennemsnitsVaegtN" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="GennemsnitsVaegtA" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="VaegtIndN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="VaegtIndA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="VaegtUdN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="VaegtUdA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FeN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FeA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GramRaaproteinPrFeN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GramRaaproteinPrFeA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GrisePrAarssoN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GrisePrAarssoA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FravaenningsvaegtN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FravaenningsvaegtA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaelkeydelseKgN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaelkeydelseKgA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaelkeProteinProcentN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MaelkeProteinProcentA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GramPPrFeN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="GramPPrFeA" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="NyRenovering">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ja" />
+          <s:enumeration value="Nej" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfOpbevaringslager">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Opbevaringslager" nillable="true" type="tns:Opbevaringslager" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Opbevaringslager">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Ejendom" type="tns:Ejendom" />
+              <s:element minOccurs="0" maxOccurs="1" name="Navn" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Udvidelse" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagertypeN" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagertypeA" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DimensionN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DimensionA" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OpbevaringskapacitetN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="OpbevaringskapacitetA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverdaekningFastN" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverdaekningFastA" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverdaekningBarriereN" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverdaekningBarriereA" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="OevrigeOplysningerN" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OevrigeOplysningerA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HusdyrgoedningOpbevaring" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagerandelProcentFoerN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagerandelProcentEfterN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagerandelProcentFoerA" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="LagerandelProcentEfterA" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatrikel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Matrikel" nillable="true" type="tns:Matrikel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Matrikel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ejendom" type="tns:Ejendom" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Kommune" />
+      <s:complexType name="ArrayOfNaturlinje">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Naturlinje" nillable="true" type="tns:Naturlinje" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Naturlinje">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DatabaseObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AnlaegId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TilId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FraId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TilType" type="tns:ObjectTypes" />
+              <s:element minOccurs="1" maxOccurs="1" name="FraType" type="tns:ObjectTypes" />
+              <s:element minOccurs="0" maxOccurs="1" name="Anlaeg" type="tns:Anlaeg" />
+              <s:element minOccurs="1" maxOccurs="1" name="Afstand" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Retning" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Til" type="tns:DatabaseObject" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fra" type="tns:DatabaseObject" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuhedOpland" type="tns:RuhederOpland" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuhedNatur" type="tns:RuhederNatur" />
+              <s:element minOccurs="1" maxOccurs="1" name="Kildehoejde" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EjendommeOver75De" type="tns:EjendommeOver75De" />
+              <s:element minOccurs="1" maxOccurs="1" name="KravOverholdt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BelastningKgN" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="OverskridelseKgN" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ObjectTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Grundoplysning" />
+          <s:enumeration value="Naturlinje" />
+          <s:enumeration value="Opbevaringslager" />
+          <s:enumeration value="Produktion" />
+          <s:enumeration value="Staldafsnit" />
+          <s:enumeration value="Anlaeg" />
+          <s:enumeration value="Ejendom" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RuhederOpland">
+        <s:restriction base="s:string">
+          <s:enumeration value="S" />
+          <s:enumeration value="L" />
+          <s:enumeration value="Rv" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RuhederNatur">
+        <s:restriction base="s:string">
+          <s:enumeration value="Bn" />
+          <s:enumeration value="Mk" />
+          <s:enumeration value="S" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="EjendommeOver75De">
+        <s:restriction base="s:string">
+          <s:enumeration value="ToEllerFlereEjendomme" />
+          <s:enumeration value="NulEjendomme" />
+          <s:enumeration value="EnEjendom" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Lugtgeneberegning">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GenekriterieOverholdt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Beregningsmodel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KorrigeretGeneafstand" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeneafstandNudrift" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="VaegtetGennemsnit" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaldeudeladtAfBeregning" type="tns:ArrayOfStaldafsnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGoedningsmaengde">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Goedningsmaengde" nillable="true" type="tns:Goedningsmaengde" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Goedningsstadie">
+        <s:restriction base="s:string">
+          <s:enumeration value="Tilfoert" />
+          <s:enumeration value="Frafoert" />
+          <s:enumeration value="Produceret" />
+          <s:enumeration value="ProduceretAfsatGraesning" />
+          <s:enumeration value="ProduceretManueltTilfoejet" />
+          <s:enumeration value="Seperationsprodukt" />
+          <s:enumeration value="FrafoertVedSeperation" />
+          <s:enumeration value="TilSeperation" />
+          <s:enumeration value="Resultat" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ArealTyper">
+        <s:restriction base="s:string">
+          <s:enumeration value="Udbringning" />
+          <s:enumeration value="Aftale" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CalculateExistingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateExistingResult" type="tns:ArrayOfFarmNData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFarmNData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FarmNData" type="tns:FarmNData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FarmNData" />
+      <s:element name="CalculateApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arealer" type="tns:ArrayOfAreal" />
+            <s:element minOccurs="0" maxOccurs="1" name="goedningsmaengder" type="tns:ArrayOfGoedningsmaengde" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedriftID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="afterCropPercent" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="aNormPercent" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="option1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="option2" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateApplicationResult" type="tns:ArrayOfFarmNData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateScenario3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arealer" type="tns:ArrayOfAreal" />
+            <s:element minOccurs="0" maxOccurs="1" name="goedningsmaengder" type="tns:ArrayOfGoedningsmaengde" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedriftID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DEmax_DEreel" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="option1" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="option2" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateScenario3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateScenario3Result" type="tns:ArrayOfFarmNData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculateExistingSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateExisting" />
+  </wsdl:message>
+  <wsdl:message name="CalculateExistingSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateExistingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateApplication" />
+  </wsdl:message>
+  <wsdl:message name="CalculateApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateScenario3SoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateScenario3" />
+  </wsdl:message>
+  <wsdl:message name="CalculateScenario3SoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateScenario3Response" />
+  </wsdl:message>
+  <wsdl:portType name="FarmNWebService2010Soap">
+    <wsdl:operation name="CalculateExisting">
+      <wsdl:input message="tns:CalculateExistingSoapIn" />
+      <wsdl:output message="tns:CalculateExistingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateApplication">
+      <wsdl:input message="tns:CalculateApplicationSoapIn" />
+      <wsdl:output message="tns:CalculateApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateScenario3">
+      <wsdl:input message="tns:CalculateScenario3SoapIn" />
+      <wsdl:output message="tns:CalculateScenario3SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FarmNWebService2010Soap" type="tns:FarmNWebService2010Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateExisting">
+      <soap:operation soapAction="http://tempuri.org/CalculateExisting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateApplication">
+      <soap:operation soapAction="http://tempuri.org/CalculateApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateScenario3">
+      <soap:operation soapAction="http://tempuri.org/CalculateScenario3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FarmNWebService2010Soap12" type="tns:FarmNWebService2010Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculateExisting">
+      <soap12:operation soapAction="http://tempuri.org/CalculateExisting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateApplication">
+      <soap12:operation soapAction="http://tempuri.org/CalculateApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateScenario3">
+      <soap12:operation soapAction="http://tempuri.org/CalculateScenario3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FarmNWebService2010">
+    <wsdl:port name="FarmNWebService2010Soap" binding="tns:FarmNWebService2010Soap">
+      <soap:address location="http://localhost:4554/FarmNWebService2010.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FarmNWebService2010Soap12" binding="tns:FarmNWebService2010Soap12">
+      <soap12:address location="http://localhost:4554/FarmNWebService2010.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

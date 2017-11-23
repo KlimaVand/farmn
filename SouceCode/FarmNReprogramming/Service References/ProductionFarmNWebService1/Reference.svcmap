@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0bf65fa5-6ccb-4b2e-82c2-025fa5b53137" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="farmnwebservice.wsdl" MetadataType="Wsdl" ID="aaf67bda-7411-4bee-8ab3-a9f1bb1f4075" SourceId="1" SourceUrl="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx?wsdl" />
+    <MetadataFile FileName="farmnwebservice.disco" MetadataType="Disco" ID="07ad0449-92a8-4bd0-afb6-1632cdb7f6b5" SourceId="1" SourceUrl="http://130.226.173.223/FarmN_Webservice_ver2/farmnwebservice.asmx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
